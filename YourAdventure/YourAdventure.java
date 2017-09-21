@@ -1,4 +1,3 @@
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
@@ -153,67 +152,68 @@ public class YourAdventure extends JComponent implements MouseListener {
         
         if(e.getX()>280 && e.getX()<325 && e.getY()>110 && e.getY()<140){
 			screen = 2;
-		}  
-		} else if(screen == 1){
-	    if(e.getX()>90 && e.getX()<155 && e.getY()>110 && e.getY()<140){
-			screen = 3;
-		}
-	    
-        if(e.getX()>280 && e.getX()<345 && e.getY()>110 && e.getY()<140){
-			screen = 4;
-		}
+        }
+		}else if(screen == 1){
+    	    if(e.getX()>90 && e.getX()<155 && e.getY()>110 && e.getY()<140){
+    			screen = 3;
+    		}
+    	    
+            if(e.getX()>280 && e.getX()<345 && e.getY()>110 && e.getY()<140){
+    			screen = 4;
+    		}
 		}else if(screen == 4){
-		 if(e.getX()>90 && e.getX()<115 && e.getY()>110 && e.getY()<140){
-		    screen = 5;
-		 }
-		    
-	    if(e.getX()>280 && e.getX()<325 && e.getY()>110 && e.getY()<140){
-			screen = 6;
-	     }
-		} else if(screen == 5){
-		if(e.getX()>90 && e.getX()<115 && e.getY()>110 && e.getY()<140){
-		    screen = 7;
-		}
-				    
-		if(e.getX()>280 && e.getX()<345 && e.getY()>110 && e.getY()<140){
-			screen = 8;
-		} else if(screen == 7){
-			if(e.getX()>90 && e.getX()<110 && e.getY()>110 && e.getY()<140){
-			    screen = 9;
-			}
-					    
-			if(e.getX()>280 && e.getX()<325 && e.getY()>110 && e.getY()<140){
-				screen = 10;
-			}
-		} else if(screen == 10){
-			if(e.getX()>90 && e.getX()<105 && e.getY()>110 && e.getY()<140){
-			    screen = 11;
-			}
-					    
-			if(e.getX()>280 && e.getX()<325 && e.getY()>110 && e.getY()<140){
-				screen = 12;
-			}
-		} else if(screen == 12){
-			if(e.getX()>90 && e.getX()<135 && e.getY()>110 && e.getY()<140){
-			    screen = 13;
-			}
-					    
-			if(e.getX()>280 && e.getX()<350 && e.getY()>110 && e.getY()<140){
-				screen = 13;
-			} 
-		} else if(screen == 13){
-			if(e.getX()>90 && e.getX()<115 && e.getY()>110 && e.getY()<140){
-			    screen = 0;
-			}
-					    
-			if(e.getX()>280 && e.getX()<325 && e.getY()>110 && e.getY()<140){
-				screen = 14;
-			}
-		}
+	   		 if(e.getX()>90 && e.getX()<115 && e.getY()>110 && e.getY()<140){
+		  		    screen = 5;
+		  		 }
+		  		    
+		  	    if(e.getX()>280 && e.getX()<325 && e.getY()>110 && e.getY()<140){
+		  			screen = 6;
+		  	     }
+		  		} else if(screen == 5){
+			  		if(e.getX()>90 && e.getX()<115 && e.getY()>110 && e.getY()<140){
+			  		    screen = 7;
+			  		}
+			  				    
+			  		if(e.getX()>280 && e.getX()<345 && e.getY()>110 && e.getY()<140){
+			  			screen = 8;
+			  		} 
+		  		}else if(screen == 7){
+		  			if(e.getX()>90 && e.getX()<110 && e.getY()>110 && e.getY()<140){
+		  			    screen = 9;
+		  			}
+		  					    
+		  			if(e.getX()>280 && e.getX()<325 && e.getY()>110 && e.getY()<140){
+		  				screen = 10;
+		  			}
+		  		} else if(screen == 10){
+		  			if(e.getX()>90 && e.getX()<150 && e.getY()>110 && e.getY()<140){
+		  			    screen = 11;
+		  			}
+		  					    
+		  			if(e.getX()>280 && e.getX()<325 && e.getY()>110 && e.getY()<140){
+		  				screen = 12;
+		  			}
+		  		} else if(screen == 12){
+		  			if(e.getX()>90 && e.getX()<135 && e.getY()>110 && e.getY()<140){
+		  			    screen = 13;
+		  			}
+		  					    
+		  			if(e.getX()>280 && e.getX()<350 && e.getY()>110 && e.getY()<140){
+		  				screen = 13;
+		  			} 
+		  		} else if(screen == 13){
+		  			if(e.getX()>90 && e.getX()<120 && e.getY()>110 && e.getY()<140){
+		  			    screen = 0;
+		  			}
+		  					    
+		  			if(e.getX()>280 && e.getX()<325 && e.getY()>110 && e.getY()<140){
+		  				screen = 14;
+		  			}
+		  		}
         
         repaint();
-	}
-	}
+    		}
+	
 
 	@Override
 	public void mousePressed(MouseEvent e) {

@@ -1,3 +1,4 @@
+package myAdventure;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
@@ -46,7 +47,10 @@ public class YourAdventure extends JComponent implements MouseListener {
         both(g);
 	} else if (screen == 14){
         acceptYourFate(g);
+	} else if (screen == 15){
+		random(g);
 	}
+    
 	}
 	
 	public void startingScreen(Graphics g){
@@ -142,6 +146,11 @@ public class YourAdventure extends JComponent implements MouseListener {
 		g.drawString("THE END", 50, 100);
 	}
 	
+	public void random (Graphics g){
+		g.setColor(Color.gray);
+		g.drawString("You found a magic fairy in the room and she turned you back into human", 10, 70);
+	}
+	
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		System.out.println(e.getX()+","+e.getY());
@@ -168,7 +177,7 @@ public class YourAdventure extends JComponent implements MouseListener {
 		  		    
 		  	    if(e.getX()>280 && e.getX()<325 && e.getY()>110 && e.getY()<140){
 		  			screen = 6;
-		  	     }
+		  	     } 
 		  		} else if(screen == 5){
 			  		if(e.getX()>90 && e.getX()<115 && e.getY()>110 && e.getY()<140){
 			  		    screen = 7;

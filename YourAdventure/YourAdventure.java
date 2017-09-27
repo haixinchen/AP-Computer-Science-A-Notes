@@ -56,10 +56,8 @@ public class YourAdventure extends JComponent implements MouseListener {
 	public void startingScreen(Graphics g){
 	g.setColor(Color.black);
 	g.drawString("Who do you want to be in a parallel universe?", 95, 70);
-	
 	g.drawString("Animal", 95, 130);
-	
-	g.drawString("Plant", 285, 130);	
+	g.drawString("Plant", 285, 130);
 	} 
 	
 	public void animal (Graphics g){
@@ -127,18 +125,30 @@ public class YourAdventure extends JComponent implements MouseListener {
 		g.drawString("You two became friend eventually! You lived happy ever after!", 10, 70);
 	} 
 	
+	public int rollDice(int sides){
+		int value = (int)(Math.random()*sides+1);
+		return value;
+	}
+	
 	public void biteHer (Graphics g){
 		g.setColor(Color.red);
 		g.drawString("the woman got mad, what do you do?", 50, 70);
 		g.drawString("run away", 95, 130);
 		g.drawString("stay", 285, 130);
+		
+		int dice1 = rollDice(6);
+		int dice2 = rollDice(6);
+		g.drawString("roll Dice 1: "+dice1, 10, 10);
+		g.drawString("roll Dice 2: "+dice2, 10, 20);
+		g.drawString("Total: "+(dice1+dice2), 10, 30);
 	} 
 	
+
 	public void both (Graphics g){
 		g.setColor(Color.red);
 		g.drawString("You fail either way.", 50, 100);
 		g.drawString("restart", 95, 130);
-		g.drawString("accept your fate", 285, 130);
+		g.drawString("accept your fate", 285, 130);	
 	} 
 	
 	public void acceptYourFate (Graphics g){
@@ -148,8 +158,9 @@ public class YourAdventure extends JComponent implements MouseListener {
 	
 	public void random (Graphics g){
 		g.setColor(Color.gray);
-		g.drawString("You found a magic fairy in the room and she turned you back into human", 10, 70);
+		g.drawString("You woke up", 10, 70);
 	}
+	
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
@@ -217,6 +228,8 @@ public class YourAdventure extends JComponent implements MouseListener {
 		  					    
 		  			if(e.getX()>280 && e.getX()<325 && e.getY()>110 && e.getY()<140){
 		  				screen = 14;
+		  			} else if (screen ==12){
+		  				
 		  			}
 		  		}
         

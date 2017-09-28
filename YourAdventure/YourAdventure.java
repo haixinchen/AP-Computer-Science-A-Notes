@@ -12,8 +12,34 @@ public class YourAdventure extends JComponent implements MouseListener {
 	public static String nameOfApp = "Your Adventure!";
 	
 	int screen;
+	
+	int[] diceRolls = new int [5];
+	
 	public YourAdventure() {
 		addMouseListener(this);
+		setDice(0);
+		printDice(0);
+	}
+	
+	public void setDice(int diceNum){
+		if (diceNum <diceRolls.length){
+			diceRolls[diceNum] = rollDice(6);
+			setDice(diceNum+1);
+		}
+	}
+	
+	public void printDice(int diceNum){
+		if (diceNum < diceRolls.length){
+			System.out.println(diceRolls[diceNum]);
+			printDice(diceNum+1);
+		}
+	}
+	
+	public int sumDice(int diceNum){
+		if (diceNum<diceRolls.length){
+			return diceRolls[diceNum]+sumDice(diceNum + 1);
+		}
+		return 0;
 	}
 	
 	public void paint(Graphics g) {
@@ -49,7 +75,7 @@ public class YourAdventure extends JComponent implements MouseListener {
         acceptYourFate(g);
 	} else if (screen == 15){
 		random(g);
-	}
+	} 
     
 	}
 	
@@ -58,6 +84,9 @@ public class YourAdventure extends JComponent implements MouseListener {
 	g.drawString("Who do you want to be in a parallel universe?", 95, 70);
 	g.drawString("Animal", 95, 130);
 	g.drawString("Plant", 285, 130);
+	
+	g.drawString("Total sum: " + sumDice(0), 10, 10);
+	g.drawString("Average:" + (sumDice(0)/diceRolls.length), 10, 20);
 	} 
 	
 	public void animal (Graphics g){
@@ -141,6 +170,7 @@ public class YourAdventure extends JComponent implements MouseListener {
 		g.drawString("roll Dice 1: "+dice1, 10, 10);
 		g.drawString("roll Dice 2: "+dice2, 10, 20);
 		g.drawString("Total: "+(dice1+dice2), 10, 30);
+		System.out.println(dice1 + dice2);
 	} 
 	
 
@@ -228,9 +258,10 @@ public class YourAdventure extends JComponent implements MouseListener {
 		  					    
 		  			if(e.getX()>280 && e.getX()<325 && e.getY()>110 && e.getY()<140){
 		  				screen = 14;
-		  			} else if (screen ==12){
-		  				
-		  			}
+		  			} 
+		  		}
+		  		if (screen == 12 && rollDice(6) == 2){
+		  			screen = 15;
 		  		}
         
         repaint();

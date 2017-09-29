@@ -170,7 +170,6 @@ public class YourAdventure extends JComponent implements MouseListener {
 		g.drawString("roll Dice 1: "+dice1, 10, 10);
 		g.drawString("roll Dice 2: "+dice2, 10, 20);
 		g.drawString("Total: "+(dice1+dice2), 10, 30);
-		System.out.println(dice1 + dice2);
 	} 
 	
 
@@ -250,9 +249,16 @@ public class YourAdventure extends JComponent implements MouseListener {
 		  					    
 		  			if(e.getX()>280 && e.getX()<350 && e.getY()>110 && e.getY()<140){
 		  				screen = 13;
+		  			
+		  				int n = (int)((Math.random()*6)+1);
+		  			if (n == 1){
+		  				screen = 15;
+		  			} else {
+		  				screen = 13;
+		  			}
 		  			} 
 		  		} else if(screen == 13){
-		  			if(e.getX()>90 && e.getX()<120 && e.getY()>110 && e.getY()<140){
+		  			if(e.getX()>90 && e.getX()<135 && e.getY()>110 && e.getY()<140){
 		  			    screen = 0;
 		  			}
 		  					    
@@ -260,9 +266,7 @@ public class YourAdventure extends JComponent implements MouseListener {
 		  				screen = 14;
 		  			} 
 		  		}
-		  		if (screen == 12 && rollDice(6) == 2){
-		  			screen = 15;
-		  		}
+		  		
         
         repaint();
     		}

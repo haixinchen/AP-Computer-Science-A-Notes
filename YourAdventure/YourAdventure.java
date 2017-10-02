@@ -1,3 +1,4 @@
+//Haixin Chen
 package myAdventure;
 import java.awt.Color;
 import java.awt.Graphics;

@@ -40,7 +40,7 @@ public class YourAdventure extends JComponent implements MouseListener {
 		if (diceNum<diceRolls.length){
 			return diceRolls[diceNum]+sumDice(diceNum + 1);
 		}
-		return 0;
+		return sumDice;
 	}
 	
 	public void paint(Graphics g) {

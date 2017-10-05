@@ -84,6 +84,7 @@ public class YourAdventure extends JComponent implements MouseListener {
 	dead(g);
 	} else if (screen == 19){
 	poison(g);
+	}
         }
 	
 	public void startingScreen(Graphics g){
@@ -197,22 +198,22 @@ public class YourAdventure extends JComponent implements MouseListener {
 		g.drawString("You woke up", 10, 70);
 	}
 	
-	public void adopted (Graphic g){
+	public void adopted (Graphics g){
 		g.setColor(Color.black);
 		g.drawString("He didn't adopted you, but he give you away to a kind friend. Happy ending!", 10, 100);
 	}
 	
-	public void grass (Graphic g){
+	public void grass (Graphics g){
 		g.setColor(Color.black);
 		g.drawString("You became a grass, didn't really lived an exciting life. END.", 10, 100);
 	}
 	
-	public void dead (Graphic g){
+	public void dead (Graphics g){
 		g.setColor(Color.black);
 		g.drawString("You didn't kill her so she killed you.", 10, 100);
 	}
 	
-	public void poison (Graphic g){
+	public void poison (Graphics g){
 		g.setColor(Color.black);
 		g.drawString("The food is poisonous.You are dead.", 10, 100);
 	}
@@ -229,7 +230,7 @@ public class YourAdventure extends JComponent implements MouseListener {
 			screen = 2;
 	}
 		
-	if(sumDice == 16){
+	if(sumDice(6) == 6){
 		screen = 17;
         }
 		}else if(screen == 1){
@@ -256,8 +257,8 @@ public class YourAdventure extends JComponent implements MouseListener {
 			  		if(e.getX()>280 && e.getX()<345 && e.getY()>110 && e.getY()<140){
 			  			screen = 8;
 			  		} 
-			if (sumDice == 13){
-				screen == 19;
+			if (sumDice(6) == 5){
+				screen =19;
 			}
 		  		}else if(screen == 7){
 		  			if(e.getX()>90 && e.getX()<110 && e.getY()>110 && e.getY()<140){
@@ -268,9 +269,9 @@ public class YourAdventure extends JComponent implements MouseListener {
 		  				screen = 10;
 		  			}
 			                
-			                if (sumDice == 15){
+			                if (sumDice(6) == 4){
 						screen = 16;
-					]
+			                }
 		  		} else if(screen == 10){
 		  			if(e.getX()>90 && e.getX()<150 && e.getY()>110 && e.getY()<140){
 		  			    screen = 11;
@@ -287,8 +288,8 @@ public class YourAdventure extends JComponent implements MouseListener {
 		  			if(e.getX()>280 && e.getX()<350 && e.getY()>110 && e.getY()<140){
 		  				screen = 13;
 						
-					if (sumDice == 14){
-						screen == 18;
+					if (sumDice(6) == 3){
+						screen = 18;
 					}
 		  			
 		  				int n = (int)((Math.random()*6)+1);

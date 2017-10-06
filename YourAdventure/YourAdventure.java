@@ -112,7 +112,8 @@ public class YourAdventure extends JComponent implements MouseListener {
 	
 	public void blackDoor (Graphics g){
 		g.setColor(Color.black);
-		g.drawString("You are eaten by a lion. DEAD", 100, 70);
+		g.drawString("There's nothing in this room", 25, 70);
+		g.drawString("Go back", 95, 130);
 	} //3
 	
 	public void whiteDoor (Graphics g){
@@ -241,6 +242,10 @@ public class YourAdventure extends JComponent implements MouseListener {
     	    
             if(e.getX()>280 && e.getX()<345 && e.getY()>110 && e.getY()<140){
     			screen = 4;
+    		}
+		}else if(screen == 3){
+    	    if(e.getX()>90 && e.getX()<155 && e.getY()>110 && e.getY()<140){
+    			screen = 1;
     		}
 		}else if(screen == 4){
 	   		 if(e.getX()>90 && e.getX()<115 && e.getY()>110 && e.getY()<140){

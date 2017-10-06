@@ -43,6 +43,12 @@ public class YourAdventure extends JComponent implements MouseListener {
 		return 0;
 	}
 	
+	public static void main(String[] args){
+		String[] treeNames = new String[3];
+		String[] tree = ("Oak tree", "Willow", "pine tree");
+		int temp = (int)Math.random()*3
+		Sytem.out.printIn(tree[temp]);
+	}
 	
 	public void paint(Graphics g) {
     if(screen==0){
@@ -107,7 +113,7 @@ public class YourAdventure extends JComponent implements MouseListener {
 	
 	public void plant (Graphics g){
 		g.setColor(Color.white);
-		g.drawString("You've become a tree! Someone cut you down, u are dead...", 50, 70);
+		g.drawString("You've become a " + tree[temp] + ". Someone cut you down, u are dead...", 50, 70);
 	} //2
 	
 	public void blackDoor (Graphics g){

@@ -10,6 +10,7 @@
  * @author Laurie White
  * @version April 2012
  */
+package magpie;
 public class Magpie2
 {
 	/**
@@ -42,10 +43,33 @@ public class Magpie2
 		{
 			response = "Tell me more about your family.";
 		}
+		else if (statement.indexOf("dog") >=0
+			    || statement.indexOf("cat") >= 0)
+		{
+			response = "Tell me more about your pet.";
+		}
+		else if (statement.indexOf("Dencker") >= 0) {
+			response = "He sounds like a good teacher";
+		}
+		else if (statement.trim().length() == 0){
+			response = "say something, please";
+		}
+		else if (statement.indexOf("no")>=0){
+			response = "why not?";
+		}
+		else if (statement.indexOf("class")>=0){
+			response = "Tell me more about your classes.";
+		}
+		else if (statement.indexOf("food")>=0){
+			response = "What is your favorite food?";
+		}
 		else
 		{
 			response = getRandomResponse();
 		}
+		
+		
+		
 		return response;
 	}
 
